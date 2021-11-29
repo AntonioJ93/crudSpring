@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="plantilla/template :: head">
+
+
+</head>
+
+<body>
+	<header th:replace="plantilla/template :: header">
+	
+	</header>
+
+	<h1 th:text="${titulo}"></h1>
+	
+	
+	<table class="table table-hover">
+
+	<thead>
+    <tr>
+      <th scope="col">Nombre</th>
+      <th scope="col">Apellidos</th>
+      <th scope="col">telefono</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr th:each="cl:${clientes}">
+      <td th:text="${cl.nombre}"></td>
+      <td th:text="${cl.apellidos}"></td>
+      <td th:text="${cl.telefono}"></td>
+    </tr>
+
+  </tbody>
+  
+</table>
+	
+	
+	<footer th:replace="plantilla/template :: footer">
+	
+	</footer>
+	
+</body>
+
+</html>
