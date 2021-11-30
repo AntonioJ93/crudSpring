@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.example.demo.modelo.entity.Ciudad;
@@ -39,5 +41,12 @@ public class ClienteController {
 		model.addAttribute("cliente", cliente);
 		model.addAttribute("titulo", "Crear Cliente");
 		return "/views/clientes/formCrear";
+	}
+	
+	@PostMapping("/guardar")
+	public String guardarCliente(@ModelAttribute("cliente") Cliente cliente) {
+		System.out.println(cliente);
+		service.crearCliente(cliente);
+		return "/views/clientes/listar";
 	}
 }

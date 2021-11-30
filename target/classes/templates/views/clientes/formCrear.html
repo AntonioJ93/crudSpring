@@ -10,7 +10,7 @@
 
 	<h1 th:text="${titulo}"></h1>
 	<div class="container w-50">
-		<form th:object="${cliente}">
+		<form th:action="@{/views/clientes/guardar}" th:object="${cliente}" method="post">
 			<div class="mb-3">
 				<label for="nombre" class="form-label col-md-2">Nombre </label> <input
 					type="text" th:field="*{nombre}" class="form-control form-control-sm col-md-6" id="nombre">
