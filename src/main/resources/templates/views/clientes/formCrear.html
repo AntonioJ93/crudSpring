@@ -16,7 +16,7 @@
 					type="hidden" th:field="*{id}" class="form-control form-control-sm col-md-6" id="id">
 				<label for="nombre" class="form-label col-md-2">Nombre </label> <input
 					type="text" th:field="*{nombre}" class="form-control form-control-sm col-md-6" id="nombre">
-					<small th:if="#{fields.hasErrors('nombres')}" th:errors="*{nombres}"></small>
+					<small th:if="#{fields.hasErrors('nombres')}" th:errors="*{nombre}"></small>
 			</div>
 
 			<div class="mb-3">
