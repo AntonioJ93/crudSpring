@@ -10,6 +10,8 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotEmpty;
 
 @Entity
 @Table(name = "clientes")
@@ -25,12 +27,14 @@ public class Cliente implements Serializable{
 	private Long id;
 	
 	@Column(name = "nombres")
+	@NotEmpty
 	private String nombre;
-	
+	@NotEmpty
 	private String apellidos;
-	
+	@NotEmpty
 	private String telefono;
-	
+	@NotEmpty
+	@Email
 	private String email;
 	
 	@ManyToOne
